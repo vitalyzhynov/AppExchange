@@ -1,0 +1,58 @@
+﻿<Window x:Class="ClientWPF.ReceiveWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientWPF"
+        mc:Ignorable="d"
+        Title="ReceiveWindow" Height="400" Width="307">
+    <Grid Margin="0,0,-8,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="274*"/>
+            <ColumnDefinition Width="33*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.ColumnSpan="2" x:Name="clientOperations" Margin="0,0,10,0">
+            <TabItem x:Name="ReceiveTab">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="5" Width="5" Fill="Black" />
+                        <TextBlock Margin="3">Receive</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Inbox messages:" HorizontalAlignment="Left" Margin="20,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.855,-0.396"/>
+                        <DataGrid Name="grid" HorizontalAlignment="Left" Height="157" Margin="20,12,0,0" VerticalAlignment="Top" Width="250" Loaded="grid_Loaded" MouseUp="grid_MouseUp"/>
+                        <Label Content="Choose location:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.947,3" Margin="25,16,0,0" Width="115"/>
+                        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" x:Name="DirectoryTextBox"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Download" HorizontalAlignment="Left" Margin="20,12,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1.373,-2.1" Height="23" x:Name="DownloadButton" Click="DownloadButton_Click"/>
+                            <Button Content="Browse" HorizontalAlignment="Left" Margin="50,12,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1.373,-2.1" Height="23" x:Name="BrowseButton" Click="BrowseButton_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="SendTAb">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="5" Width="5" Fill="Black" />
+                        <TextBlock Margin="3">Send</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Choose recipient:" HorizontalAlignment="Left" Margin="20,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.855,-0.396"/>
+                        <DataGrid Name="choosingRecipientGrid" HorizontalAlignment="Left" Height="157" Margin="20,12,0,0" VerticalAlignment="Top" Width="250" Loaded="choosingRecipientGrid_Loaded" MouseUp="choosingRecipientGrid_MouseUp"/>
+                        <Label Content="Choose location of sending package:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.947,3" Margin="25,16,0,0" Width="244"/>
+                        <TextBox HorizontalAlignment="Left" Height="23" Margin="20,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" x:Name="DirectoryFromTextBox"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Send" HorizontalAlignment="Left" Margin="20,12,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1.373,-2.1" Height="23" x:Name="SendButton" Click="SendButton_Click"/>
+                            <Button Content="Browse" HorizontalAlignment="Left" Margin="50,12,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1.373,-2.1" Height="23" x:Name="BrowseFromButton" Click="BrowseFromButton_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+        
+    </Grid>
+</Window>

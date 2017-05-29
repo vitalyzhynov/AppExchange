@@ -1,0 +1,28 @@
+﻿<Window x:Class="AppExchangeServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppExchangeServer"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Menu Grid.ColumnSpan="2">
+            <MenuItem Header="Client managing">
+                <MenuItem Header="Add client" Name="AddClientMenuItem" Click="AddClientMenuItem_Click"/>
+                <MenuItem Header="Remove client" Name="RemoveClientMenuItem" Click="RemoveClientMenuItem_Click"/>
+                <MenuItem Header="Update client" Name="UpdateClientMenuItem" Click="UpdateClientMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Host">
+                <MenuItem Header="Start" Name="StartMenuItem" IsEnabled="True" Click="StartMenuItem_Click"/>
+                <MenuItem Header="Stop" Name="StopMenuItem" IsEnabled="False" Click="StopMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+            </MenuItem>
+        </Menu>
+        <Border BorderThickness="1" BorderBrush="Black" Margin="20,48,10,61">
+            <TextBlock Name="LogTextBlock" TextWrapping="Wrap" Margin="15,9" />
+        </Border>
+    </Grid>
+</Window>
